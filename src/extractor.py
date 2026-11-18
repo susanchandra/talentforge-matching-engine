@@ -1,165 +1,196 @@
 """
-src/extractor.py — LLM-powered structured extraction for TalentForge.
+src/extractor.py — LLM-powered structured extraction with Pydantic for TalentForge.
 
-Uses GPT-4o-mini to extract structured schemas from JDs and resumes.
+Uses GPT-4o-mini with native OpenAI structured outputs (response_format=PydanticModel)
+to extract guaranteed, validated schemas from JDs and resumes.
 """
 
 import json
 import re
-from typing import Any
+from typing import Any, List, Literal, Optional
 
 import openai
+from pydantic import BaseModel, Field
 
 
 # ──────────────────────────────────────────────────────────────────────────────
-# Helpers
+# Pydantic Schemas for Native Structured Outputs
 # ──────────────────────────────────────────────────────────────────────────────
 
-def _strip_markdown_fences(text: str) -> str:
-    """Remove ```json ... ``` or ``` ... ``` wrappers from LLM output."""
-    # Remove leading/trailing whitespace
-    text = text.strip()
-    # Match optional language tag (json, JSON, etc.)
-    pattern = r"^```(?:json)?\s*\n?(.*?)\n?```$"
-    match = re.match(pattern, text, re.DOTALL | re.IGNORECASE)
-    if match:
-        return match.group(1).strip()
-    return text
+class JDSchema(BaseModel):
+    """Structured representation of a Job Description."""
+    required_skills: List[str] = Field(
+        description="List of required technical skills and tools."
+    )
+    preferred_skills: List[str] = Field(
+        default_factory=list,
+        description="List of preferred or bonus technical skills."
+    )
+    seniority_level: Literal["junior", "mid", "senior", "staff", "principal"] = Field(
+        description="Target seniority level for the role."
+    )
+    role_type: str = Field(
+        description="Primary role title or specialization, e.g. 'Machine Learning Engineer'."
+    )
+    domain: str = Field(
+        description="Technical domain, e.g. 'ML Platform', 'Computer Vision', 'Data Science'."
+    )
+    key_expectations: List[str] = Field(
+        default_factory=list,
+        description="Top expectations and deliverables for the candidate (max 5 items)."
+    )
 
 
-def _safe_json_parse(raw: str, context: str = "") -> dict:
-    """
-    Attempt to parse JSON from LLM response with one retry after stripping fences.
+class RoleHistoryItem(BaseModel):
+    """Single past or current employment record."""
+    title: str = Field(description="Job title held.")
+    company: str = Field(description="Company or employer organization.")
+    duration_years: float = Field(description="Duration in this role in years.")
+    seniority_level: Literal["intern", "junior", "mid", "senior", "staff", "principal"] = Field(
+        description="Evaluated seniority level for this specific title."
+    )
 
-    Args:
-        raw: Raw string from LLM.
-        context: Description for error messages.
 
-    Returns:
-        Parsed dict.
+class ProjectItem(BaseModel):
+    """Technical project entry with descriptions and stack."""
+    name: str = Field(description="Name or title of the project.")
+    description: str = Field(description="Detailed project summary with metrics and impact.")
+    technologies: List[str] = Field(description="List of technologies, libraries, and frameworks used.")
 
-    Raises:
-        ValueError: If JSON cannot be parsed after retry.
-    """
-    # First attempt: strip fences then parse
-    cleaned = _strip_markdown_fences(raw)
-    try:
-        return json.loads(cleaned)
-    except json.JSONDecodeError:
-        pass
 
-    # Second attempt: try to find JSON object within the text
-    json_match = re.search(r"\{.*\}", cleaned, re.DOTALL)
-    if json_match:
-        try:
-            return json.loads(json_match.group(0))
-        except json.JSONDecodeError:
-            pass
+class EducationItem(BaseModel):
+    """Academic background details."""
+    degree: str = Field(description="Degree obtained or pursued (e.g. B.Tech, M.S., Ph.D.).")
+    field: str = Field(description="Field of study (e.g. Computer Science, Statistics).")
+    institution: str = Field(description="University, college, or institute name.")
 
-    raise ValueError(
-        f"Failed to parse JSON from LLM response ({context}). "
-        f"Raw response (first 300 chars): {raw[:300]}"
+
+class CandidateSchema(BaseModel):
+    """Structured representation of a Candidate Resume."""
+    name: str = Field(description="Full name of the candidate.")
+    skills: List[str] = Field(description="List of technical and operational skills possessed.")
+    experience_years: float = Field(description="Total cumulative years of professional experience.")
+    role_history: List[RoleHistoryItem] = Field(
+        default_factory=list,
+        description="Chronological sequence of roles held."
+    )
+    projects: List[ProjectItem] = Field(
+        default_factory=list,
+        description="Notable projects demonstrating domain capability."
+    )
+    education: EducationItem = Field(
+        description="Highest or primary academic credential."
+    )
+    domain: str = Field(
+        description="Primary technical domain specialization."
     )
 
 
 # ──────────────────────────────────────────────────────────────────────────────
-# JD Schema Extraction
+# Extraction Functions with Native Structured Outputs
 # ──────────────────────────────────────────────────────────────────────────────
 
-JD_SYSTEM_PROMPT = """You are a job description analyst. Extract a structured JSON schema \
-from the job description. Return ONLY valid JSON with no preamble, \
-no markdown fences, no explanation.
-Schema:
-{
-  "required_skills": ["list of strings"],
-  "preferred_skills": ["list of strings"],
-  "seniority_level": "one of [junior, mid, senior, staff, principal]",
-  "role_type": "string",
-  "domain": "string",
-  "key_expectations": ["list of strings, max 5"]
-}"""
+JD_SYSTEM_PROMPT = (
+    "You are an expert technical job description analyst. "
+    "Analyze the provided job description and extract a strictly conforming schema. "
+    "Accurately identify all required technical tools, minimum seniority, and key responsibilities."
+)
+
+CANDIDATE_SYSTEM_PROMPT = (
+    "You are a principal technical recruiter parsing a software/ML resume. "
+    "Extract a verified structured schema from the resume text. "
+    "Accurately calculate experience years and categorize each past role's seniority level."
+)
 
 
 def extract_jd_schema(jd_text: str, client: openai.OpenAI) -> dict:
     """
-    Extract structured schema from a job description using GPT-4o-mini.
+    Extract structured schema from a job description using native Pydantic output parsing.
 
     Args:
         jd_text: Raw job description text.
         client: Initialized OpenAI client.
 
     Returns:
-        Parsed JD schema dict with keys: required_skills, preferred_skills,
-        seniority_level, role_type, domain, key_expectations.
+        Validated dictionary conforming to JDSchema.
     """
-    response = client.chat.completions.create(
-        model="gpt-4o-mini",
-        messages=[
-            {"role": "system", "content": JD_SYSTEM_PROMPT},
-            {"role": "user", "content": jd_text},
-        ],
-        temperature=0.1,
-        max_tokens=800,
-    )
-    raw = response.choices[0].message.content or ""
-    return _safe_json_parse(raw, context="JD schema")
-
-
-# ──────────────────────────────────────────────────────────────────────────────
-# Candidate Schema Extraction
-# ──────────────────────────────────────────────────────────────────────────────
-
-CANDIDATE_SYSTEM_PROMPT = """You are a technical recruiter parsing a resume. Extract a structured \
-JSON schema. Return ONLY valid JSON with no preamble, no markdown fences.
-Schema:
-{
-  "name": "string",
-  "skills": ["list of strings"],
-  "experience_years": "number",
-  "role_history": [
-    {
-      "title": "string",
-      "company": "string",
-      "duration_years": "number",
-      "seniority_level": "one of [intern, junior, mid, senior, staff, principal]"
-    }
-  ],
-  "projects": [
-    {
-      "name": "string",
-      "description": "string",
-      "technologies": ["list of strings"]
-    }
-  ],
-  "education": {
-    "degree": "string",
-    "field": "string",
-    "institution": "string"
-  },
-  "domain": "string"
-}"""
+    try:
+        completion = client.beta.chat.completions.parse(
+            model="gpt-4o-mini",
+            messages=[
+                {"role": "system", "content": JD_SYSTEM_PROMPT},
+                {"role": "user", "content": jd_text},
+            ],
+            response_format=JDSchema,
+            temperature=0.1,
+        )
+        parsed: JDSchema = completion.choices[0].message.parsed
+        return parsed.model_dump()
+    except Exception as e:
+        # Fallback to string prompt if parse beta method is unavailable
+        return _fallback_extract_jd(jd_text, client, str(e))
 
 
 def extract_candidate_schema(resume_text: str, client: openai.OpenAI) -> dict:
     """
-    Extract structured schema from a resume using GPT-4o-mini.
+    Extract structured schema from a candidate resume using native Pydantic output parsing.
 
     Args:
-        resume_text: Raw resume text.
+        resume_text: Raw candidate resume text.
         client: Initialized OpenAI client.
 
     Returns:
-        Parsed candidate schema dict with name, skills, experience_years,
-        role_history, projects, education, domain.
+        Validated dictionary conforming to CandidateSchema.
     """
+    try:
+        completion = client.beta.chat.completions.parse(
+            model="gpt-4o-mini",
+            messages=[
+                {"role": "system", "content": CANDIDATE_SYSTEM_PROMPT},
+                {"role": "user", "content": resume_text},
+            ],
+            response_format=CandidateSchema,
+            temperature=0.1,
+        )
+        parsed: CandidateSchema = completion.choices[0].message.parsed
+        return parsed.model_dump()
+    except Exception as e:
+        return _fallback_extract_candidate(resume_text, client, str(e))
+
+
+# ──────────────────────────────────────────────────────────────────────────────
+# Defensive Fallbacks for Offline / Legacy API Environments
+# ──────────────────────────────────────────────────────────────────────────────
+
+def _fallback_extract_jd(jd_text: str, client: openai.OpenAI, error_msg: str) -> dict:
+    """Regex-backed JSON parser fallback if native beta.parse fails."""
     response = client.chat.completions.create(
         model="gpt-4o-mini",
         messages=[
-            {"role": "system", "content": CANDIDATE_SYSTEM_PROMPT},
-            {"role": "user", "content": resume_text[:6000]},  # Truncate to avoid token limits
+            {"role": "system", "content": JD_SYSTEM_PROMPT + " Output valid JSON."},
+            {"role": "user", "content": jd_text},
         ],
         temperature=0.1,
-        max_tokens=1200,
     )
-    raw = response.choices[0].message.content or ""
-    return _safe_json_parse(raw, context="candidate schema")
+    raw = response.choices[0].message.content or "{}"
+    match = re.search(r"\{.*\}", raw, re.DOTALL)
+    if match:
+        return json.loads(match.group(0))
+    raise ValueError(f"Failed to parse JD JSON: {error_msg}")
+
+
+def _fallback_extract_candidate(resume_text: str, client: openai.OpenAI, error_msg: str) -> dict:
+    """Regex-backed JSON parser fallback if native beta.parse fails."""
+    response = client.chat.completions.create(
+        model="gpt-4o-mini",
+        messages=[
+            {"role": "system", "content": CANDIDATE_SYSTEM_PROMPT + " Output valid JSON."},
+            {"role": "user", "content": resume_text},
+        ],
+        temperature=0.1,
+    )
+    raw = response.choices[0].message.content or "{}"
+    match = re.search(r"\{.*\}", raw, re.DOTALL)
+    if match:
+        return json.loads(match.group(0))
+    raise ValueError(f"Failed to parse Candidate JSON: {error_msg}")

@@ -1,105 +1,91 @@
 """
-src/explainer.py — LLM-powered explanation card generation for TalentForge.
+src/explainer.py — Structured Explanation Generation with Pydantic for TalentForge.
 
-This is the core differentiator: structured, evidence-based explanations
-that tell recruiters WHY a candidate was ranked the way they were.
+Uses GPT-4o-mini with native OpenAI structured outputs (response_format=ExplanationCard)
+at temperature 0.2 to produce evidence-grounded hiring recommendations and interview probes.
 """
 
 import json
 import re
-from typing import Optional
+from typing import Any, List, Literal, Optional
 
 import openai
+from pydantic import BaseModel, Field
 
 
 # ──────────────────────────────────────────────────────────────────────────────
-# Mock fallback (used when no API key is present)
+# Pydantic Schemas for Structured Outputs
 # ──────────────────────────────────────────────────────────────────────────────
 
-MOCK_EXPLANATION_CARD = {
-    "summary": "Strong candidate with relevant technical background.",
-    "top_strengths": [
-        "Technical skills align with role requirements.",
-        "Demonstrated project experience in the relevant domain.",
-        "Career progression shows consistent growth.",
-    ],
-    "concern": "Insufficient signal to assess leadership experience.",
-    "interview_probe": "Describe a time you owned a project end-to-end.",
-    "recommendation": "maybe",
-    "ats_miss": None,
-}
+class ExplanationCard(BaseModel):
+    """Guaranteed structured schema for candidate explanation cards."""
+    summary: str = Field(
+        description="2-3 sentence executive assessment directly citing verified resume evidence."
+    )
+    top_strengths: List[str] = Field(
+        description="List of 3 concrete strengths referencing specific projects, companies, tools, or metrics."
+    )
+    concern: str = Field(
+        description="Exactly one concrete gap, limitation, or domain uncertainty (never left blank)."
+    )
+    interview_probe: str = Field(
+        description="One targeted technical question directly probing the noted concern."
+    )
+    recommendation: Literal["strong yes", "yes", "maybe", "no"] = Field(
+        description="Categorical recruiter verdict."
+    )
+    ats_miss: Optional[str] = Field(
+        default=None,
+        description="Explanation of why a traditional keyword ATS would miss this profile, or null if ATS would rank normally."
+    )
+
 
 # ──────────────────────────────────────────────────────────────────────────────
 # Prompts
 # ──────────────────────────────────────────────────────────────────────────────
 
-EXPLANATION_SYSTEM_PROMPT = """You are a senior technical recruiter with 10 years of experience.
-You write hiring recommendations that are specific, evidence-based,
-and actionable. Never use generic phrases like "strong candidate"
-or "good fit" without citing specific evidence from the resume.
-
-Your task: write a structured explanation card for a candidate
-who has been ranked by an AI hiring system.
+EXPLANATION_SYSTEM_PROMPT = """You are a senior technical hiring partner with 10 years of experience.
+Your hiring evaluations are objective, evidence-based, and actionable.
 
 Rules:
-1. Every strength claim must cite specific evidence from the resume
-   (project name, company name, technology, impact number if available).
-2. Include exactly one concern or gap — do not skip this even for
-   top-ranked candidates. Concerns make explanations credible.
-3. End with a specific interview probe question targeting the concern.
-4. Vary your language — do not use the same sentence structure
-   across different candidates.
-5. Write as if you are advising a hiring manager, not summarizing a resume.
-6. Include the "ats_miss" field only if the candidate would likely
-   rank poorly on keyword matching despite being a strong candidate
-   — otherwise set to null.
+1. Ground every strength claim in concrete evidence from the candidate profile (project name, employer, technology, scale, or metrics).
+2. Never output generic praise like "strong candidate" or "good fit" without specific citation.
+3. Include exactly one genuine concern or limitation — do not omit this even for top candidates.
+4. Formulate an actionable interview probe that specifically tests the identified concern.
+5. If the candidate used non-standard terminology that keyword ATS algorithms penalize, explain it clearly in ats_miss.
+"""
 
-Return ONLY valid JSON with no preamble or markdown:
-{
-  "summary": "2-3 sentence recruiter assessment. Specific, evidence-based.",
-  "top_strengths": [
-    "strength 1 with specific evidence",
-    "strength 2 with specific evidence",
-    "strength 3 with specific evidence"
-  ],
-  "concern": "one specific gap or uncertainty, not generic",
-  "interview_probe": "one specific question to probe the concern",
-  "recommendation": "one of: strong yes, yes, maybe, no",
-  "ats_miss": "why ATS would have missed this person, or null"
-}"""
+RECRUITER_MEMO_SYSTEM_PROMPT = """You are a head of talent acquisition summarizing candidate screening results for engineering leadership.
+Write a concise, professional briefing memo (180-220 words).
+Structure into plain paragraphs:
+1. Executive summary of the top 3 recommended candidates and their distinguishing technical capabilities.
+2. Key cohort pattern or observation (e.g. impact of high-growth velocity vs tenure).
+3. Important caveats, limitations, or interview focus areas.
 
-RECRUITER_MEMO_SYSTEM_PROMPT = """You are a senior recruiting manager summarizing AI-assisted candidate
-screening results for a hiring team. Write a concise, professional
-briefing memo (200-250 words). Cover:
-1. The top 3 recommended candidates and why (one sentence each).
-2. One pattern you noticed across the shortlist.
-3. One caveat or limitation of the screening the team should know.
+Memo format: clean professional prose without bullet points or markdown headings. Refer to "the screening pipeline" rather than "AI".
+"""
 
-Write in memo format: plain paragraphs, no bullet points.
-Do not use the phrase "AI system" — use "the screening" instead."""
-
-
-def _strip_markdown_fences(text: str) -> str:
-    """Remove ```json...``` wrappers from LLM output."""
-    text = text.strip()
-    pattern = r"^```(?:json)?\s*\n?(.*?)\n?```$"
-    match = re.match(pattern, text, re.DOTALL | re.IGNORECASE)
-    return match.group(1).strip() if match else text
+MOCK_EXPLANATION_CARD = {
+    "summary": "Candidate profile demonstrates relevant technical foundations.",
+    "top_strengths": [
+        "Core technical competencies match the required tech stack.",
+        "Demonstrated practical implementation experience in adjacent domain.",
+        "Clear professional timeline with verifiable tenure.",
+    ],
+    "concern": "Unverified depth in high-throughput production deployment environments.",
+    "interview_probe": "Walk through an architecture you designed that handled scale or unexpected failures in production.",
+    "recommendation": "maybe",
+    "ats_miss": None,
+}
 
 
 class ExplanationEngine:
     """
-    Generates structured explanation cards and recruiter memos using GPT-4o-mini.
-
-    If the OpenAI client is None or the API call fails, falls back to a
-    safe mock explanation so the app always renders.
+    Generates structured explanation cards and recruiter briefing memos
+    using GPT-4o-mini with Pydantic structured output validation.
     """
 
     def __init__(self, openai_client: Optional[openai.OpenAI]):
-        """
-        Args:
-            openai_client: Initialized OpenAI client, or None for mock mode.
-        """
         self.client = openai_client
         self._mock_mode = openai_client is None
 
@@ -112,65 +98,73 @@ class ExplanationEngine:
         rank: int,
     ) -> dict:
         """
-        Generate a structured explanation card for a ranked candidate.
+        Generate a structured, evidence-grounded explanation card.
 
-        Args:
-            jd_schema: Extracted JD schema dict.
-            candidate_schema: Extracted candidate schema dict.
-            scores: Dimension scores dict from StructuredScorer.
-            trajectory: Trajectory analysis dict from TrajectoryAnalyzer.
-            rank: Candidate's rank position (1-indexed).
-
-        Returns:
-            Explanation card dict with: summary, top_strengths, concern,
-            interview_probe, recommendation, ats_miss.
+        Uses native Pydantic schema parsing (temperature 0.2) with fallback handling.
         """
         if self._mock_mode:
             card = MOCK_EXPLANATION_CARD.copy()
+            cand_name = candidate_schema.get("name", "The candidate")
+            exp_yrs = candidate_schema.get("experience_years", "several")
+            skills = ", ".join(candidate_schema.get("skills", ["the core tech stack"])[:3])
             card["summary"] = (
-                f"{candidate_schema.get('name', 'This candidate')} brings "
-                f"{candidate_schema.get('experience_years', 'several')} years of experience "
-                f"with demonstrated skills in {', '.join(candidate_schema.get('skills', ['the required domain'])[:3])}."
+                f"{cand_name} brings {exp_yrs} years of experience with verified capability in {skills}. "
+                f"Ranked #{rank} based on structured alignment and trajectory velocity."
             )
             return card
 
-        user_message = (
-            f"Candidate rank: {rank}\n"
-            f"JD: {json.dumps(jd_schema)}\n"
+        user_content = (
+            f"Candidate Rank: #{rank}\n"
+            f"Target Role: {jd_schema.get('role_type', '')} ({jd_schema.get('domain', '')})\n"
+            f"Required Skills: {', '.join(jd_schema.get('required_skills', []))}\n"
             f"Candidate: {json.dumps(candidate_schema)}\n"
-            f"Scores: skill_match={scores.get('skill_match', 0):.2f}, "
+            f"Computed Scores: skill_match={scores.get('skill_match', 0):.2f}, "
             f"experience_depth={scores.get('experience_depth', 0):.2f}, "
             f"project_relevance={scores.get('project_relevance', 0):.2f}, "
-            f"trajectory={trajectory.get('trajectory_class', 'unknown')}, "
-            f"seniority_delta_per_year={trajectory.get('delta_per_year', 0):.2f}"
+            f"trajectory_class={trajectory.get('trajectory_class', 'unknown')}, "
+            f"delta_per_year={trajectory.get('delta_per_year', 0):.2f}"
         )
 
+        try:
+            # Native OpenAI beta structured outputs
+            completion = self.client.beta.chat.completions.parse(
+                model="gpt-4o-mini",
+                messages=[
+                    {"role": "system", "content": EXPLANATION_SYSTEM_PROMPT},
+                    {"role": "user", "content": user_content},
+                ],
+                response_format=ExplanationCard,
+                temperature=0.2,  # Low temperature for deterministic, factual grounding
+            )
+            parsed: ExplanationCard = completion.choices[0].message.parsed
+            return parsed.model_dump()
+
+        except Exception:
+            # Fallback for API errors or timeouts
+            return self._fallback_generate_card(user_content)
+
+    def _fallback_generate_card(self, user_content: str) -> dict:
+        """Defensive string parsing fallback if structured parsing encounters an API error."""
         try:
             response = self.client.chat.completions.create(
                 model="gpt-4o-mini",
                 messages=[
-                    {"role": "system", "content": EXPLANATION_SYSTEM_PROMPT},
-                    {"role": "user", "content": user_message},
+                    {"role": "system", "content": EXPLANATION_SYSTEM_PROMPT + " Output valid JSON conforming to the schema."},
+                    {"role": "user", "content": user_content},
                 ],
-                temperature=0.7,
+                temperature=0.2,
                 max_tokens=600,
             )
-            raw = response.choices[0].message.content or ""
-            cleaned = _strip_markdown_fences(raw)
-
-            # Try to parse JSON; fallback to mock on failure
-            try:
-                card = json.loads(cleaned)
-                # Ensure required keys exist
-                for key in ["summary", "top_strengths", "concern", "interview_probe", "recommendation", "ats_miss"]:
-                    if key not in card:
-                        card[key] = MOCK_EXPLANATION_CARD[key]
+            raw = response.choices[0].message.content or "{}"
+            match = re.search(r"\{.*\}", raw, re.DOTALL)
+            if match:
+                data = json.loads(match.group(0))
+                card = MOCK_EXPLANATION_CARD.copy()
+                card.update(data)
                 return card
-            except json.JSONDecodeError:
-                return MOCK_EXPLANATION_CARD.copy()
-
         except Exception:
-            return MOCK_EXPLANATION_CARD.copy()
+            pass
+        return MOCK_EXPLANATION_CARD.copy()
 
     def generate_recruiter_memo(
         self,
@@ -179,48 +173,35 @@ class ExplanationEngine:
         evaluation_results: dict,
     ) -> str:
         """
-        Generate a professional recruiter briefing memo for the hiring team.
-
-        Args:
-            jd_schema: Extracted JD schema dict.
-            top_candidates: List of top candidate dicts (with name, scores, cards).
-            evaluation_results: Dict from evaluator.run_evaluation().
-
-        Returns:
-            Plain text memo (200-250 words).
+        Generate a cohesive recruiter briefing memo for engineering leadership.
         """
         if self._mock_mode:
             return (
-                "CANDIDATE SCREENING SUMMARY\n\n"
-                "The screening has identified a strong shortlist of candidates for this role. "
-                "The top three candidates each demonstrate meaningful technical depth and "
-                "relevant project experience aligned with the position requirements.\n\n"
-                "A notable pattern across the shortlist is that the highest-ranked candidates "
-                "demonstrate consistent career progression rather than simply matching keywords. "
-                "Several strong candidates were discovered who used domain-specific terminology "
-                "rather than industry buzzwords — a common gap in traditional keyword screening.\n\n"
-                "The team should note that the screening is optimized for technical fit and "
-                "career trajectory signals. Cultural fit, communication style, and team "
-                "dynamics will require direct interview assessment. Treat these rankings as "
-                "a starting point for conversation, not a final verdict."
+                "CANDIDATE SCREENING MEMORANDUM\n\n"
+                "The candidate screening pipeline evaluated the applicant cohort against the position requirements. "
+                "The top-ranked candidates exhibit solid domain competencies, validated project histories, and consistent "
+                "career trajectory progression.\n\n"
+                "Across the shortlist, candidates with verifiable system delivery and high growth velocity outperformed "
+                "profiles characterized by surface-level buzzword density. Several high-impact candidates who used non-standard "
+                "terminology were surfaced by the semantic retrieval and trajectory layers.\n\n"
+                "Technical leadership should review the attached explanation cards and use the targeted interview probes to "
+                "evaluate depth during technical rounds. Cultural alignment and direct problem-solving capacity remain essential "
+                "areas for direct interview assessment."
             )
 
-        # Summarize top 3 candidates for the prompt
         top_3_summary = []
         for i, cand in enumerate(top_candidates[:3], 1):
             name = cand.get("name", f"Candidate {i}")
             rec = cand.get("recommendation", "yes")
             summary = cand.get("summary", "")
-            top_3_summary.append(f"{i}. {name} ({rec}): {summary[:150]}")
+            top_3_summary.append(f"{i}. {name} (Verdict: {rec}): {summary}")
 
-        user_message = (
-            f"Role: {jd_schema.get('role_type', 'Unknown role')} | "
-            f"Domain: {jd_schema.get('domain', 'Unknown domain')} | "
-            f"Seniority: {jd_schema.get('seniority_level', 'mid')}\n\n"
-            f"Top 3 candidates:\n" + "\n".join(top_3_summary) + "\n\n"
-            f"Evaluation: TalentForge NDCG={evaluation_results.get('pipeline_ndcg', 0):.2f}, "
-            f"ATS NDCG={evaluation_results.get('baseline_ndcg', 0):.2f}, "
-            f"Improvement={evaluation_results.get('ndcg_improvement_pct', 0):.1f}%"
+        user_content = (
+            f"Target Role: {jd_schema.get('role_type', 'ML Role')} ({jd_schema.get('seniority_level', 'senior')})\n"
+            f"Domain: {jd_schema.get('domain', 'Engineering')}\n"
+            f"Top Candidates:\n" + "\n".join(top_3_summary) + "\n\n"
+            f"Pipeline Evaluation: NDCG@10={evaluation_results.get('pipeline_ndcg', 0):.3f}, "
+            f"Baseline NDCG@10={evaluation_results.get('baseline_ndcg', 0):.3f}"
         )
 
         try:
@@ -228,15 +209,18 @@ class ExplanationEngine:
                 model="gpt-4o-mini",
                 messages=[
                     {"role": "system", "content": RECRUITER_MEMO_SYSTEM_PROMPT},
-                    {"role": "user", "content": user_message},
+                    {"role": "user", "content": user_content},
                 ],
-                temperature=0.6,
-                max_tokens=400,
+                temperature=0.3,
+                max_tokens=450,
             )
             return response.choices[0].message.content or ""
         except Exception:
-            return (
-                "CANDIDATE SCREENING SUMMARY\n\n"
-                "The screening identified strong candidates for this role. "
-                "Please review the explanation cards for detailed assessments."
-            )
+            return self._mock_memo()
+
+    def _mock_memo(self) -> str:
+        return (
+            "CANDIDATE SCREENING MEMORANDUM\n\n"
+            "The screening pipeline has identified top candidate profiles matching core requirements. "
+            "Please review individual explanation cards for technical breakdowns and targeted interview probes."
+        )

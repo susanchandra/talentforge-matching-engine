@@ -6,30 +6,27 @@ relevance score for each (JD, resume) pair, then blends with the
 hybrid retrieval score for the final ranking.
 """
 
-from typing import List
-
-from sentence_transformers import CrossEncoder
+from typing import List, Optional
+import numpy as np
 
 
 class CrossEncoderReranker:
     """
     Reranks candidates using a cross-encoder relevance model.
-
-    The cross-encoder scores each (query, passage) pair jointly,
-    producing more accurate relevance signals than bi-encoder cosine
-    similarity alone — at the cost of O(n) forward passes.
-
-    We use it on the top-20 retrieved candidates only (post-retrieval
-    reranking) to keep latency reasonable.
     """
 
     MODEL_NAME = "cross-encoder/ms-marco-MiniLM-L-6-v2"
 
     def __init__(self):
-        """Load the cross-encoder model (downloads on first use)."""
-        print("Loading reranker model (first time only)...")
-        self.model = CrossEncoder(self.MODEL_NAME, max_length=512)
-        print(f"CrossEncoderReranker loaded: {self.MODEL_NAME}")
+        """Load tokenizer and cross-encoder model."""
+        import torch
+        from transformers import AutoTokenizer, AutoModelForSequenceClassification
+
+        print(f"Loading CrossEncoder: {self.MODEL_NAME}...")
+        self.tokenizer = AutoTokenizer.from_pretrained(self.MODEL_NAME)
+        self.model = AutoModelForSequenceClassification.from_pretrained(self.MODEL_NAME)
+        self.model.eval()
+        print(f"CrossEncoderReranker loaded successfully.")
 
     def rerank(
         self,
@@ -41,57 +38,57 @@ class CrossEncoderReranker:
         Rerank candidates using cross-encoder scores blended with hybrid scores.
 
         Args:
-            jd_text: Raw job description text (used as the query).
-            candidates: List of candidate dicts, each with keys:
-                        - candidate_id (str)
-                        - resume_text (str)
-                        - hybrid_score (float, 0-1)
+            jd_text: Raw job description text (used as query).
+            candidates: List of candidate dicts with candidate_id, resume_text, hybrid_score.
             top_k: Number of final results to return.
 
         Returns:
-            List of top_k dicts sorted by final_score descending:
-            [
-              {
-                "candidate_id": str,
-                "hybrid_score": float,
-                "cross_encoder_score": float,    # raw logit, not normalized
-                "cross_encoder_score_norm": float, # min-max normalized 0-1
-                "final_score": float,             # blended score
-              },
-              ...
-            ]
+            List of candidate dicts with final_score, cross_encoder_score, etc.
         """
         if not candidates:
             return []
 
-        # Build (query, passage) pairs for the cross-encoder
-        # Truncate resume to first 1000 chars to fit within 512 tokens
+        import torch
+
+        # Prepare pairs: JD truncated to 500 chars, resume to 1000 chars
         pairs = [
             (jd_text[:500], c.get("resume_text", "")[:1000])
             for c in candidates
         ]
 
-        # Score all pairs in one batch
-        raw_scores = self.model.predict(pairs, show_progress_bar=False).tolist()
+        # Batch tokenization
+        features = self.tokenizer(
+            [p[0] for p in pairs],
+            [p[1] for p in pairs],
+            padding=True,
+            truncation=True,
+            max_length=512,
+            return_tensors="pt",
+        )
 
-        # Min-max normalize cross-encoder scores to [0, 1]
-        min_score = min(raw_scores)
-        max_score = max(raw_scores)
-        score_range = max_score - min_score
+        with torch.no_grad():
+            logits = self.model(**features).logits
+            # Binary classification or single logit score
+            if logits.shape[1] == 1:
+                raw_scores = logits.squeeze(-1).cpu().numpy().tolist()
+            else:
+                raw_scores = logits[:, 1].cpu().numpy().tolist()
 
-        if score_range < 1e-9:
-            # All scores identical — normalize to 0.5
-            normalized_scores = [0.5] * len(raw_scores)
+        # Min-max normalization across retrieved candidates
+        min_s = min(raw_scores)
+        max_s = max(raw_scores)
+        span = max_s - min_s
+
+        if span < 1e-9:
+            norm_scores = [0.5] * len(raw_scores)
         else:
-            normalized_scores = [
-                (s - min_score) / score_range for s in raw_scores
-            ]
+            norm_scores = [(s - min_s) / span for s in raw_scores]
 
-        # Blend: 60% hybrid (retrieval) + 40% cross-encoder (rerank)
+        # Blend: 60% hybrid score + 40% cross-encoder score
         results = []
-        for candidate, raw_ce, norm_ce in zip(candidates, raw_scores, normalized_scores):
+        for candidate, raw_ce, norm_ce in zip(candidates, raw_scores, norm_scores):
             hybrid = candidate.get("hybrid_score", 0.0)
-            final = 0.6 * hybrid + 0.4 * norm_ce
+            final = 0.60 * hybrid + 0.40 * norm_ce
 
             results.append({
                 "candidate_id": candidate["candidate_id"],
@@ -101,6 +98,6 @@ class CrossEncoderReranker:
                 "final_score": round(final, 4),
             })
 
-        # Sort by final_score descending and return top_k
+        # Sort descending by final score
         results.sort(key=lambda x: x["final_score"], reverse=True)
         return results[:top_k]
