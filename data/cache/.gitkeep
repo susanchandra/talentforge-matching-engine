@@ -1,0 +1,4 @@
+# TalentForge Demo Cache
+# This directory holds pre-computed demo results.
+# Run: python scripts/precompute_demo.py
+# to generate demo_results.json

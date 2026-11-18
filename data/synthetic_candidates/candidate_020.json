@@ -1,0 +1,8 @@
+{
+  "id": "candidate_020",
+  "name": "Kavya Reddy",
+  "ground_truth_quality": "high",
+  "ground_truth_notes": "4 years, social media ML, built content moderation at a startup, impactful but non-enterprise background.",
+  "candidate_type": "good_hidden",
+  "resume_text": "KAVYA REDDY\nML Engineer — Trust & Safety\nkavya.reddy@email.com | Hyderabad, India\n\nEXPERIENCE\n\nML Engineer — ShareChat (Bangalore / Remote)\nMay 2020 – Present (4 years)\n- Built content moderation ML system for ShareChat's 180M+ user platform\n  supporting 15 Indian languages\n- Multilingual hate speech detection model (mBERT + language adapters):\n  F1 of 0.87 across 8 languages, deployed in production moderating\n  500K+ posts/day in real time\n- Built NSFW image detection pipeline using EfficientNet; processing\n  2M+ images/day with 0.3% false positive rate\n- Designed active learning loop that reduced annotation cost by 55%\n  while maintaining model quality through smart sample selection\n- System prevented estimated 2M+ policy-violating posts from going live in 2023\n- Tech: Python, PyTorch, HuggingFace, FastAPI, Kafka, Redis, Docker, Kubernetes\n\nJunior Software Engineer — Mindtree (Hyderabad)\nAugust 2019 – April 2020 (0.75 years)\n- Built Java REST APIs for enterprise logistics application\n\nEDUCATION\nB.Tech in Computer Science — JNTU Hyderabad, 2019 (CGPA: 8.5)\n\nSKILLS\nPython, PyTorch, HuggingFace Transformers, mBERT, FastAPI, Kafka,\nRedis, Docker, Kubernetes, NLP, computer vision, EfficientNet,\ncontent moderation, multilingual NLP, active learning, trust and safety\n"
+}

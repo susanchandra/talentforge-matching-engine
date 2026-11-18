@@ -1,0 +1,8 @@
+{
+  "id": "candidate_033",
+  "name": "Prashant Kumar",
+  "ground_truth_quality": "low",
+  "ground_truth_notes": "2 years but entirely non-ML support role, pivoting with a keyword-stuffed CV.",
+  "candidate_type": "keyword_stuffer",
+  "resume_text": "PRASHANT KUMAR\nML Engineer | Data Scientist | AI Enthusiast\nprashant.k.ml@outlook.com | Lucknow, India\n\nSUMMARY\nDynamic and results-oriented ML Engineer with expertise across the entire ML lifecycle\nincluding data collection, feature engineering, model training (PyTorch, TensorFlow,\nscikit-learn), MLOps (MLflow, Docker, Kubernetes), model deployment (FastAPI, Triton),\nmonitoring (Prometheus, Grafana), and cloud platforms (AWS SageMaker, GCP Vertex AI).\nPassionate about LLMs, RAG, and Generative AI. Strong knowledge of recommendation systems,\nNLP, computer vision, and time series forecasting.\n\nEXPERIENCE\n\nIT Support Engineer — HCL Technologies (Noida)\nJune 2022 – Present (2 years)\n- Resolved Level 1 and Level 2 IT support tickets for enterprise clients\n- Managed hardware and software installations for 500+ employees\n- Participated in company's AI literacy training program\n\nEDUCATION\nB.Tech in Information Technology — AKTU Lucknow, 2022 (CGPA: 6.5)\n\nSKILLS (self-assessed)\nPython (intermediate), Machine Learning, Deep Learning, PyTorch, TensorFlow,\nMLOps, Docker, Kubernetes, AWS, GCP, NLP, LLMs, RAG, GenAI, SQL, Tableau\n\nPROJECTS\n- Sentiment analysis notebook on Kaggle (public kernel, 12 upvotes)\n- House price regression using scikit-learn (tutorial)\n- GPT-2 text generation experiment (Google Colab)\n\nCERTIFICATIONS\n- AI for Everyone — Coursera 2023\n- Python for Data Science — Coursera 2022\n"
+}

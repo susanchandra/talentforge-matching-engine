@@ -1,0 +1,8 @@
+{
+  "id": "candidate_047",
+  "name": "Manoj Verma",
+  "ground_truth_quality": "medium",
+  "ground_truth_notes": "Ex-network engineer pivoting to ML, 5 years network background + 2 years ML for networking.",
+  "candidate_type": "career_changer",
+  "resume_text": "MANOJ VERMA\nNetwork Automation & ML Engineer\nmanoj.v@email.com | Chennai, India\n\nEXPERIENCE\n\nML Engineer (Network AI) — Jio Platforms (Navi Mumbai)\nMarch 2022 – Present (2.5 years)\n- Built ML model predicting network congestion 15 minutes ahead (86% accuracy)\n- Anomaly detection for network fault prediction, reducing MTTR by 30%\n\nNetwork Engineer — Tata Communications (Chennai)\nJune 2017 – February 2022 (4.75 years)\n- Managed enterprise WAN/LAN infrastructure for 200+ enterprise clients\n- CCNP certified; led network migration projects\n\nEDUCATION\nB.Tech Electronics and Communication — VIT Vellore, 2017\n\nSKILLS\nPython, scikit-learn, PyTorch (learning), time series, anomaly detection,\nPandas, SQL, networking, Cisco, network protocols, Linux, Docker\n"
+}

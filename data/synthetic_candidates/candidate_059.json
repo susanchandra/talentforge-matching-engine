@@ -1,0 +1,8 @@
+{
+  "id": "candidate_059",
+  "name": "Vandana Iyer",
+  "ground_truth_quality": "medium",
+  "ground_truth_notes": "6 years graph ML specialist, strong knowledge graphs and network analysis.",
+  "candidate_type": "domain_specialist",
+  "resume_text": "VANDANA IYER\nGraph ML Research Engineer\nvandana.i@email.com | Bangalore, India\n\nSUMMARY\n6 years in graph machine learning and knowledge graphs. Built knowledge\ngraph systems at Wipro Research used by 3 enterprise clients. Deep in\ngraph neural networks and entity resolution. Limited production MLOps.\n\nEXPERIENCE\n\nResearch Engineer — Wipro Research (Bangalore)\n2020 – Present (4 years)\n- Built enterprise knowledge graph for a US telecom client (50M+ entities)\n- Graph neural network for entity resolution (99.1% precision)\n- Fraud ring detection using GNN on transaction graphs\n\nData Scientist — EY GDS (Bangalore)\n2018 – 2020 (2 years)\n- Built customer analytics models for financial services clients\n\nEDUCATION\nM.Tech Computer Science — IIT Delhi, 2018\n\nSKILLS\nPython, PyTorch Geometric, DGL, NetworkX, Neo4j, scikit-learn,\ngraph neural networks, knowledge graphs, entity resolution,\ncommunity detection, SQL (graph extensions), limited: distributed training, MLOps\n"
+}

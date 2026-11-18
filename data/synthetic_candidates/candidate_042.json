@@ -1,0 +1,8 @@
+{
+  "id": "candidate_042",
+  "name": "Shalini Gupta",
+  "ground_truth_quality": "medium",
+  "ground_truth_notes": "PhD physicist pivoting to ML, 5 years domain expertise in applied physics.",
+  "candidate_type": "career_changer",
+  "resume_text": "SHALINI GUPTA\nPhD Physicist | ML for Science\nshalini.g@email.com | Delhi, India\n\nSUMMARY\nPhD in computational physics from IIT Delhi, now applying ML to scientific problems.\nExpert in numerical methods, statistical modeling, and high-performance computing.\nJoined ML team at ISRO as data scientist 1.5 years ago.\n\nEXPERIENCE\n\nData Scientist — ISRO (Bangalore)\nJanuary 2023 – Present (1.5 years)\n- Applying ML to satellite image analysis for land classification\n- Built neural network for cloud mask detection (accuracy: 92%)\n\nResearch Scholar — IIT Delhi\nJuly 2018 – December 2022 (4.5 years)\n- PhD: Applied ML to protein folding prediction for quantum chemistry models\n- Published 3 papers in Physical Review Letters\n\nEDUCATION\nPhD Computational Physics — IIT Delhi, 2022\nM.Sc. Physics — Delhi University, 2018\n\nSKILLS\nPython, NumPy, SciPy, PyTorch, scikit-learn, HPC (MPI, OpenMP),\nMATLAB, statistical modeling, physics simulation, ML for science\n\nPUBLICATIONS: 3 peer-reviewed papers in computational physics\n"
+}

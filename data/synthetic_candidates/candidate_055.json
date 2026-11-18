@@ -1,0 +1,8 @@
+{
+  "id": "candidate_055",
+  "name": "Preeti Bhojwani",
+  "ground_truth_quality": "medium",
+  "ground_truth_notes": "6 years time series expert, deep ARIMA/state space expertise, limited DL.",
+  "candidate_type": "domain_specialist",
+  "resume_text": "PREETI BHOJWANI\nSenior Data Scientist — Time Series Forecasting\npreeti.b@email.com | Mumbai, India\n\nSUMMARY\n6 years specialized in time series forecasting for energy and financial markets.\nDeep expertise in SARIMA, state space models, and Fourier analysis.\nTransitioning to deep learning time series methods.\n\nEXPERIENCE\n\nSenior Data Scientist — BPCL (Mumbai)\n2021 – Present (3 years)\n- Fuel demand forecasting for 5,000+ petrol stations across India\n- Reduced forecasting error (MAPE) from 8.2% to 4.1% using ensemble methods\n- Built daily automated forecasting pipeline in Python + Airflow\n\nData Scientist — ICICI Direct (Mumbai)\n2018 – 2021 (3 years)\n- Stock price and volatility forecasting models\n\nEDUCATION\nM.Sc. Statistics (Time Series specialization) — IIT Kanpur, 2018\n\nSKILLS\nPython, R, statsmodels, ARIMA, SARIMA, state space models,\nProphet, scikit-learn, Airflow, SQL, pandas, NumPy,\nlimited: PyTorch, deep learning, ML deployment at scale\n"
+}

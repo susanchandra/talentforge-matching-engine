@@ -1,0 +1,8 @@
+{
+  "id": "candidate_027",
+  "name": "Preethi Devi",
+  "ground_truth_quality": "medium",
+  "ground_truth_notes": "2 years, built ML feature from scratch at startup, high velocity.",
+  "candidate_type": "high_growth",
+  "resume_text": "PREETHI DEVI\nJunior ML Engineer\npreethi.d@email.com | Chennai, India\n\nEXPERIENCE\n\nJunior ML Engineer — Licious (Bangalore)\nSeptember 2022 – Present (2 years)\n- Built fresh produce quality prediction model using image classification\n  (ResNet-50, 93% accuracy) reducing customer complaints by 28%\n- Deployed model on Android app using TFLite (offline inference)\n- Designed data flywheel: new customer feedback automatically feeds\n  retraining pipeline\n\nEDUCATION\nB.E. Computer Science — CEG Anna University, 2022 (CGPA: 8.9)\n\nSKILLS\nPython, PyTorch, TensorFlow Lite, scikit-learn, OpenCV, FastAPI,\nDocker, SQL, image classification, mobile ML deployment, pandas\n\nPROJECTS\n- FoodSafe: Personal food safety checker app using CV model (Play Store: 2K downloads)\n"
+}

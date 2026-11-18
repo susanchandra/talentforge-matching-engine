@@ -1,0 +1,8 @@
+{
+  "id": "candidate_026",
+  "name": "Rohit Pillai",
+  "ground_truth_quality": "medium",
+  "ground_truth_notes": "3 years, research → industry pivot, strong ML fundamentals.",
+  "candidate_type": "high_growth",
+  "resume_text": "ROHIT PILLAI\nML Engineer (ex-researcher)\nrohit.p.ml@gmail.com | Thiruvananthapuram, India\n\nEXPERIENCE\n\nML Engineer — Cure.ai (Bangalore)\nJune 2021 – Present (3 years)\n- Built chest X-ray pathology detection model (AUC: 0.91 on NIH ChestX-ray14)\n- Improved model robustness through test-time augmentation and ensemble methods\n- Built model explanation dashboard using Grad-CAM for radiologists\n\nResearch Intern — IISER Pune\nMay 2020 – May 2021 (1 year)\n- Worked on representation learning for biological sequences\n\nEDUCATION\nM.Sc. in Statistics — ISI Kolkata, 2020\n\nSKILLS\nPython, PyTorch, scikit-learn, OpenCV, medical imaging, Grad-CAM,\nNumPy, pandas, statistics, research methodology, Docker\n"
+}

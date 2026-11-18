@@ -1,0 +1,8 @@
+{
+  "id": "candidate_034",
+  "name": "Manish Agarwal",
+  "ground_truth_quality": "low",
+  "ground_truth_notes": "Overstates experience significantly, keyword-heavy, weak substance.",
+  "candidate_type": "keyword_stuffer",
+  "resume_text": "MANISH AGARWAL\nLead AI/ML Engineer | 5 Years Experience\nmanish.agarwal.ai@gmail.com | Jaipur, India\n\nSUMMARY\n5+ years experience in ML and AI [Note: 3 years were in digital marketing roles]\nExpert in PyTorch, TensorFlow, scikit-learn, MLOps, CI/CD, Docker, Kubernetes,\nLLM deployment, RAG systems, vector databases, recommendation systems, NLP, CV.\n\nEXPERIENCE\n\nDigital Marketing Analyst — WeddingWire India (Jaipur)\nJuly 2019 – December 2021 (2.5 years)\n- Managed Google Ads and Facebook marketing campaigns\n- Analyzed campaign performance data using Excel and basic Python scripts\n- Used Google Analytics for website traffic analysis\n\nJunior Data Analyst — Infosys BPO (Jaipur)\nJanuary 2022 – December 2022 (1 year)\n- Ran SQL queries for business reporting\n- Built Excel dashboards for management\n\nML Engineer (self-declared) — Freelance\nJanuary 2023 – Present (1.5 years)\n- Built chatbots for small businesses using GPT API\n- Created prediction models for personal projects\n\nEDUCATION\nB.Com — Rajasthan University, 2019\n\nSKILLS\nPython, Machine Learning, Deep Learning, PyTorch, TensorFlow, Docker,\nKubernetes, MLflow, AWS, NLP, computer vision, LLM, RAG, SQL\n"
+}

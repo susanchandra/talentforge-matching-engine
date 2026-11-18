@@ -1,0 +1,8 @@
+{
+  "id": "candidate_039",
+  "name": "Abhishek Jain",
+  "ground_truth_quality": "low",
+  "ground_truth_notes": "1.5 years in unrelated DevOps role, ML skills purely theoretical.",
+  "candidate_type": "keyword_stuffer",
+  "resume_text": "ABHISHEK JAIN\nML Engineer | DevOps | Python | AI\nabhishek.j.ml@gmail.com | Indore, India\n\nEXPERTISE\nPython, Machine Learning, MLOps, CI/CD, Docker, Kubernetes, Jenkins,\nPyTorch, TensorFlow, scikit-learn, LLM, RAG, AWS, GCP, Airflow,\nMLflow, FastAPI, FAISS, NLP, Computer Vision, Recommendation Systems\n\nEXPERIENCE\n\nDevOps Engineer — Capgemini (Indore)\nJanuary 2023 – Present (1.5 years)\n- Maintained CI/CD pipelines using Jenkins and GitLab CI\n- Managed Docker containers and Kubernetes cluster administration\n- Monitored system health using Prometheus and Grafana\n- No ML or data science involvement\n\nEDUCATION\nB.Tech Computer Science — IPS Academy, 2022 (CGPA: 6.8)\n\nSKILLS\nDocker (actual experience), Kubernetes (actual experience), Jenkins,\nPython (scripting level), ML (self-study only), AWS (certifications)\n\nPROJECTS\n- CIFAR-10 image classifier (tutorial)\n- Simple linear regression\n- LangChain tutorial chatbot\n\nCERTIFICATIONS\nCKA (Kubernetes), AWS SysOps — 2023\n"
+}

@@ -1,0 +1,8 @@
+{
+  "id": "candidate_058",
+  "name": "Akshay Pandita",
+  "ground_truth_quality": "medium",
+  "ground_truth_notes": "8 years speech recognition expert, strong signal processing.",
+  "candidate_type": "domain_specialist",
+  "resume_text": "AKSHAY PANDITA\nSenior Speech ML Engineer\nakshay.p@email.com | Mumbai, India\n\nSUMMARY\n8 years in automatic speech recognition and text-to-speech for Indian languages.\nLed Hindi and Kashmiri ASR development at CDAC. Expert in acoustic modeling\nand speech signal processing. Limited general ML engineering experience.\n\nEXPERIENCE\n\nSenior Research Engineer — CDAC Mumbai\n2016 – Present (8 years)\n- Led Hindi ASR project (WER: 8.2% on AIR broadcast corpus)\n- Built 5 Indian language TTS systems deployed in government digital services\n- Kaldi, ESPnet, and custom PyTorch models\n\nEDUCATION\nM.Tech Speech Technology — IIT Madras, 2016\nB.Tech ECE — NIT Kashmir, 2014\n\nSKILLS\nPython, PyTorch, Kaldi, ESPnet, librosa, torchaudio,\nspeech recognition, TTS, acoustic modeling, DSP,\nlimited: Docker, Kubernetes, web deployment, SQL\n"
+}

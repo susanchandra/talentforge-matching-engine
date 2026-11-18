@@ -1,0 +1,8 @@
+{
+  "id": "candidate_049",
+  "name": "Vijay Kumar",
+  "ground_truth_quality": "medium",
+  "ground_truth_notes": "Ex-teacher pivoting to data science, strong statistical thinking, 2 years DS.",
+  "candidate_type": "career_changer",
+  "resume_text": "VIJAY KUMAR\nData Scientist (ex-Mathematics Teacher)\nvijay.k.ds@gmail.com | Bhopal, India\n\nEXPERIENCE\n\nData Scientist — MP Government (Smart Cities Mission)\nApril 2022 – Present (2 years)\n- Built traffic flow prediction model for Bhopal smart city initiative\n- Citizen service request classification and routing (NLP, 91% accuracy)\n\nMathematics Teacher — Kendriya Vidyalaya\nJune 2016 – March 2022 (6 years)\n- Taught mathematics and statistics to grades 9-12\n\nEDUCATION\nM.Sc. Mathematics — IIT Indore, 2016 (CGPA: 8.8)\n\nSKILLS\nPython, pandas, scikit-learn, SQL, statistics, NLP, matplotlib,\nStreamlit, time series, spatial analysis, teaching, communication\n\nSTRENGTHS: Extremely strong mathematical foundation; excellent communicator\n"
+}

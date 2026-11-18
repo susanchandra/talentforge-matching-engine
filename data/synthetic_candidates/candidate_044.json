@@ -1,0 +1,8 @@
+{
+  "id": "candidate_044",
+  "name": "Deepa Nair",
+  "ground_truth_quality": "medium",
+  "ground_truth_notes": "Doctor turned clinical AI researcher, domain expertise + 2 years ML.",
+  "candidate_type": "career_changer",
+  "resume_text": "DEEPA NAIR MBBS, MD\nClinical AI Researcher\ndeepa.n.ai@email.com | Pune, India\n\nSUMMARY\nMBBS + MD physician with 5 years clinical practice, now building AI for healthcare.\nDomain expertise in clinical data interpretation. 2 years building medical ML models.\n\nEXPERIENCE\n\nClinical AI Researcher — Manipal Hospitals AI Lab (Bangalore)\nJanuary 2022 – Present (2.5 years)\n- Built AI model for sepsis prediction (AUROC: 0.87) using ICU vitals\n- Designed clinical validation study with 2 hospitals (IRB approved)\n- Presented at AMIA 2023 annual symposium\n\nMedical Officer — KEM Hospital (Mumbai)\nAugust 2017 – December 2021 (4.5 years)\n- Clinical practice in emergency medicine\n\nEDUCATION\nMD Emergency Medicine — Mumbai University, 2017\nMBBS — Government Medical College Pune, 2013\n\nSKILLS\nPython, scikit-learn, PyTorch, SQL, clinical data analysis,\nsurvival analysis, EHR data processing, medical knowledge,\nstatistics, R, Pandas\n"
+}

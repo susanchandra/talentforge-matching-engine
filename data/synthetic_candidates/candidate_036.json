@@ -1,0 +1,8 @@
+{
+  "id": "candidate_036",
+  "name": "Varun Tripathi",
+  "ground_truth_quality": "low",
+  "ground_truth_notes": "3 years in unrelated role, tiny ML exposure, massive buzzword inflation.",
+  "candidate_type": "keyword_stuffer",
+  "resume_text": "VARUN TRIPATHI\nML Engineer | Data Scientist | AI Specialist\nvarun.t.ai@gmail.com | Bhopal, India\n\nCORE COMPETENCIES\nMachine Learning, Deep Learning, MLOps, LLMOps, RAG, Vector Databases,\nPyTorch, TensorFlow, scikit-learn, XGBoost, Transformers, BERT, GPT-4,\nDocker, Kubernetes, Airflow, MLflow, AWS SageMaker, GCP Vertex AI,\nRecommendation Systems, NLP, Computer Vision, Fraud Detection, A/B Testing\n\nEXPERIENCE\n\nQA Engineer — Tech Mahindra (Bhopal)\nJune 2021 – Present (3 years)\n- Tested enterprise software applications for banking clients\n- Wrote automated test scripts using Selenium and Python\n- Participated in agile ceremonies and wrote test plans\n\nEDUCATION\nB.Tech Electronics — RGPV Bhopal, 2021 (CGPA: 7.0)\n\nSKILLS (claimed without experience)\nPython (for testing), Machine Learning (theoretical), PyTorch, TensorFlow,\nDocker (basic), AWS (beginner), SQL\n\nPROJECTS\n- Diabetes prediction model (tutorial, Google Colab)\n- Simple chatbot using rule-based if/else logic\n- Excel dashboard for sales data\n\nCERTIFICATIONS\n- Python for Testing — Udemy\n- Introduction to Machine Learning — Coursera\n- AWS Cloud Practitioner — 2023\n"
+}

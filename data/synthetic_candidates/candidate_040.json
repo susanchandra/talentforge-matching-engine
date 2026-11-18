@@ -1,0 +1,8 @@
+{
+  "id": "candidate_040",
+  "name": "Pooja Sharma",
+  "ground_truth_quality": "low",
+  "ground_truth_notes": "Fresh grad with no experience, inflated skills section with every possible ML keyword.",
+  "candidate_type": "keyword_stuffer",
+  "resume_text": "POOJA SHARMA\nSenior ML Engineer | LLM Expert | MLOps | GenAI | Computer Vision\npooja.s.ai@gmail.com | Pune, India\n\nPROFESSIONAL SUMMARY\nExpert Machine Learning Engineer with deep knowledge of PyTorch, TensorFlow,\nLLMs, RAG pipelines, MLOps (MLflow, Kubeflow, Airflow), Docker, Kubernetes,\nAWS SageMaker, GCP Vertex AI, recommendation systems, NLP, computer vision,\nfraud detection, time series, A/B testing, feature engineering, SHAP, LIME.\n\nEXPERIENCE: None\n\nEDUCATION\nB.Tech Computer Science — Symbiosis Institute, 2024 (CGPA: 7.3)\n\nSKILLS (claimed)\nAll of: Python, R, Java, Scala, SQL, NoSQL, PyTorch, TensorFlow, JAX,\nscikit-learn, XGBoost, LightGBM, HuggingFace, LangChain, FAISS,\nDocker, Kubernetes, Airflow, MLflow, AWS, GCP, Azure...\n\nPROJECTS\n- 10 tutorial-based projects from Coursera and Udemy\n- No original work or deployed systems\n\nCERTIFICATIONS\n25 certificates from various online platforms\n"
+}

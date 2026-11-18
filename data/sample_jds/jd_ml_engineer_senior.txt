@@ -1,0 +1,52 @@
+Senior Machine Learning Engineer
+Company: NeuralScale Technologies
+Location: Bangalore / Remote
+Experience: 5+ years
+
+About the Role:
+We are looking for a Senior ML Engineer to join our core AI platform team.
+You will design, build, and deploy large-scale machine learning systems that
+power our recommendation and personalization products serving 50M+ users.
+This is a high-impact role where you will own the full ML lifecycle from
+research prototyping to production deployment.
+
+Key Responsibilities:
+- Design and implement end-to-end ML pipelines for recommendation, ranking,
+  and personalization use cases at scale
+- Lead model development: experimentation, feature engineering, training,
+  evaluation, and A/B testing
+- Build robust MLOps infrastructure: model registry, CI/CD for ML,
+  monitoring, and automated retraining pipelines
+- Collaborate with product, data engineering, and platform teams to
+  translate business requirements into ML solutions
+- Mentor junior engineers and review technical designs
+- Drive adoption of ML best practices across the organization
+
+Required Skills:
+- Python (expert level)
+- PyTorch or TensorFlow (production experience)
+- MLflow or similar experiment tracking
+- Feature stores (Feast, Tecton, or similar)
+- Docker and Kubernetes for model serving
+- SQL and distributed computing (Spark or Dask)
+- Experience with recommendation systems or ranking models
+- Strong fundamentals in statistics and machine learning theory
+
+Preferred Skills:
+- Experience with real-time model serving (Triton, TorchServe, or BentoML)
+- Knowledge of LLMs and fine-tuning techniques
+- Apache Airflow or Kubeflow for pipeline orchestration
+- Cloud platforms: AWS SageMaker, GCP Vertex AI, or Azure ML
+- Experience with causal inference or multi-armed bandits
+
+Seniority Level: Senior (5-9 years)
+Role Type: Machine Learning Engineer
+Domain: Machine Learning / AI Platform
+Team Size: 15-person ML platform team
+
+Key Expectations:
+- Own end-to-end ML model development and deployment
+- Build production-grade, high-throughput model serving infrastructure
+- Lead technical design discussions and code reviews
+- Improve model performance through systematic experimentation
+- Ensure ML system reliability with 99.9% uptime SLAs

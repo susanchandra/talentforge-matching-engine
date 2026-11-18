@@ -1,0 +1,8 @@
+{
+  "id": "candidate_050",
+  "name": "Anjali Rao",
+  "ground_truth_quality": "medium",
+  "ground_truth_notes": "Ex-content strategist pivoting to NLP, 3 years domain + 1.5 years NLP.",
+  "candidate_type": "career_changer",
+  "resume_text": "ANJALI RAO\nNLP Engineer (ex-Content Strategist)\nanjali.rao@email.com | Bangalore, India\n\nEXPERIENCE\n\nNLP Engineer — Inshorts (Bangalore)\nSeptember 2022 – Present (2 years)\n- Built auto-summarization system for news articles (ROUGE-L: 0.42)\n- Topic modeling pipeline clustering 10,000+ articles daily\n\nContent Strategist — Amazon India (Bangalore)\nJune 2019 – August 2022 (3.25 years)\n- Led content strategy for Amazon India product pages\n- Strong analytical skills; used SQL and Excel for content performance analysis\n\nEDUCATION\nMBA Marketing — XLRI Jamshedpur, 2019\nB.A. English Literature — Lady Shri Ram College, 2017\n\nSKILLS\nPython, HuggingFace, scikit-learn, NLP, text summarization,\ntopic modeling, SQL, content strategy, communication, pandas\n"
+}

@@ -1,0 +1,47 @@
+Mid-Level Data Scientist
+Company: DataDriven Analytics
+Location: Mumbai / Hybrid
+Experience: 3+ years
+
+About the Role:
+We are seeking a skilled Data Scientist to join our Analytics & Insights team.
+You will work across multiple business units to extract insights from complex
+datasets, build predictive models, and communicate findings to stakeholders.
+This role sits at the intersection of analytics, ML, and business strategy.
+
+Key Responsibilities:
+- Design and implement statistical models and machine learning solutions
+  to solve business problems across marketing, operations, and product
+- Conduct exploratory data analysis and hypothesis testing on large datasets
+- Build dashboards and automated reports for business stakeholders
+- Work with data engineers to define data pipelines and feature requirements
+- Present findings and model results to non-technical audiences
+- Continuously monitor model performance in production
+
+Required Skills:
+- Python (scikit-learn, pandas, numpy, matplotlib)
+- Statistical modeling: regression, classification, clustering
+- SQL (complex queries, window functions, CTEs)
+- Experiment design and A/B testing
+- Data visualization (Tableau, Power BI, or Plotly)
+- Basic understanding of machine learning pipelines
+- Experience with at least one cloud platform (AWS, GCP, or Azure)
+
+Preferred Skills:
+- Experience with NLP or time-series forecasting
+- Apache Spark for big data processing
+- MLflow for experiment tracking
+- Bayesian methods or causal inference
+- Knowledge of marketing analytics or customer segmentation
+
+Seniority Level: Mid (3-5 years)
+Role Type: Data Scientist
+Domain: Data Science / Analytics
+Team Size: 8-person analytics team
+
+Key Expectations:
+- Deliver actionable insights from data with clear business impact
+- Build and deploy predictive models with proper documentation
+- Communicate complex findings clearly to non-technical stakeholders
+- Collaborate across functions to define success metrics
+- Maintain data quality standards and reproducible analysis workflows

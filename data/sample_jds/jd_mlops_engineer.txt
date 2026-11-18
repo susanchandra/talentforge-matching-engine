@@ -1,0 +1,51 @@
+MLOps Engineer
+Company: ScaleOps Cloud
+Location: Hyderabad / Remote
+Experience: 3+ years
+
+About the Role:
+We are building our ML platform from the ground up and need an MLOps Engineer
+to own the infrastructure that lets our data science team move fast.
+You will build and maintain the tools, pipelines, and systems that take ML
+models from experiment to production reliably and at scale.
+
+Key Responsibilities:
+- Design and build end-to-end ML pipelines using Kubeflow, Airflow, or similar
+- Manage model registry, versioning, and deployment workflows
+- Build CI/CD pipelines specifically for ML models (testing, validation,
+  automated retraining, canary deployments)
+- Set up and maintain model monitoring: drift detection, performance tracking,
+  alerting systems
+- Containerize ML workloads with Docker and orchestrate with Kubernetes
+- Work closely with data scientists to productionize their models
+- Manage cloud ML infrastructure (AWS SageMaker or GCP Vertex AI)
+- Implement feature stores and data versioning with DVC or similar
+
+Required Skills:
+- Python (strong proficiency)
+- Docker and Kubernetes (Helm, kubectl)
+- CI/CD tools: GitHub Actions, GitLab CI, or Jenkins
+- Cloud platforms: AWS (SageMaker, ECS, Lambda) or GCP (Vertex AI, Cloud Run)
+- Apache Airflow or Kubeflow for orchestration
+- MLflow or Weights & Biases for experiment tracking
+- Model serving: FastAPI, Triton Inference Server, or TorchServe
+- Monitoring: Prometheus, Grafana, Evidently AI, or similar
+
+Preferred Skills:
+- Infrastructure as code: Terraform or Pulumi
+- Experience with LLM deployment and optimization (quantization, vLLM)
+- Spark or Dask for data processing
+- Experience with feature stores (Feast, Tecton)
+- Knowledge of data quality frameworks (Great Expectations)
+
+Seniority Level: Mid (3-5 years)
+Role Type: MLOps Engineer
+Domain: Machine Learning Infrastructure / Platform
+Team Size: 5-person MLOps team
+
+Key Expectations:
+- Build reliable, automated ML deployment pipelines with zero-downtime deploys
+- Reduce model deployment time from weeks to hours
+- Ensure model reliability with comprehensive monitoring and alerting
+- Collaborate with data science team to understand and operationalize their work
+- Document all platform decisions and maintain runbooks

@@ -1,0 +1,8 @@
+{
+  "id": "candidate_056",
+  "name": "Amitabh Dasgupta",
+  "ground_truth_quality": "medium",
+  "ground_truth_notes": "9 years reinforcement learning specialist, academic-industry mix.",
+  "candidate_type": "domain_specialist",
+  "resume_text": "AMITABH DASGUPTA\nReinforcement Learning Specialist\namitabh.d@email.com | Kolkata, India\n\nSUMMARY\n9 years focused exclusively on reinforcement learning and simulation.\nPublished 8 papers on RL for robotics and game-playing agents.\nRecently moved to industry; limited production ML experience.\n\nEXPERIENCE\n\nSenior ML Scientist — Google DeepMind India (Hyderabad)\n2022 – Present (2 years)\n- Research on multi-agent RL for resource allocation\n\nResearch Scientist — IIT Kharagpur\n2015 – 2022 (7 years postdoc + faculty)\n\nEDUCATION\nPhD Computer Science (RL) — IIT Bombay, 2015\n\nSKILLS\nPython, PyTorch, JAX, RLlib, OpenAI Gym, reinforcement learning,\nmulti-agent systems, simulation, game theory,\nlimited: MLOps, SQL, distributed data systems, production deployment\n\nPUBLICATIONS: 8, including NeurIPS (2021, 2023)\n"
+}

@@ -1,0 +1,49 @@
+# Python virtual environment
+venv/
+env/
+.venv/
+ENV/
+
+# Python cache & artifacts
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+build/
+develop-eggs/
+dist/
+downloads/
+eggs/
+.eggs/
+lib/
+lib64/
+parts/
+sdist/
+var/
+wheels/
+*.egg-info/
+.installed.cfg
+*.egg
+
+# Secrets and environment configs
+.env
+.env.local
+.env.*.local
+
+# Demo caches and serialized models/indexes
+data/cache/*.json
+!data/cache/.gitkeep
+*.faiss
+*.pkl
+
+# Logs
+*.log
+logs/
+
+# IDE and OS files
+.vscode/
+.idea/
+*.swp
+*.swo
+.DS_Store
+Thumbs.db

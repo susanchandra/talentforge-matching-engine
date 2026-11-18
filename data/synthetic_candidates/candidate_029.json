@@ -1,0 +1,8 @@
+{
+  "id": "candidate_029",
+  "name": "Divya Krishnan",
+  "ground_truth_quality": "medium",
+  "ground_truth_notes": "2 years, strong academic background, built recommendation system at startup.",
+  "candidate_type": "high_growth",
+  "resume_text": "DIVYA KRISHNAN\nJunior ML Engineer\ndivya.k@email.com | Bangalore, India\n\nEXPERIENCE\n\nML Engineer — Cred (Bangalore)\nAugust 2022 – Present (2 years)\n- Built credit card offer recommendation engine (CTR improvement: +15%)\n- Designed offline evaluation harness for recommendation experiments\n- Implemented data versioning workflow adopted by entire DS team\n\nEDUCATION\nB.Tech in Computer Science — IIT Madras, 2022 (CGPA: 9.2)\n\nSKILLS\nPython, PyTorch, scikit-learn, SQL, Docker, MLflow,\nrecommendation systems, A/B testing, pandas, numpy\n\nPROJECTS\n- Kaggle: Top 5% in Recsys Challenge 2022\n- IITM RL Club: Built DQN agent for OpenAI CartPole\n"
+}

@@ -1,0 +1,8 @@
+{
+  "id": "candidate_054",
+  "name": "Suresh Naidu",
+  "ground_truth_quality": "medium",
+  "ground_truth_notes": "8 years operations research, excellent optimization skills but weak ML.",
+  "candidate_type": "domain_specialist",
+  "resume_text": "SURESH NAIDU\nOperations Research Scientist\nsuresh.n@email.com | Bangalore, India\n\nSUMMARY\n8 years in operations research and combinatorial optimization for supply chain.\nExpert in LP, MIP, and heuristic methods. Applying ML to optimization.\nLimited deep learning or ML platform experience.\n\nEXPERIENCE\n\nSenior Operations Research Scientist — Walmart Global Tech (Bangalore)\n2020 – Present (4 years)\n- Built mixed-integer programming model for Walmart US store replenishment\n  optimization saving $50M annually\n- Applied ML to forecast solver run times and warm-start solutions\n\nOperations Research Analyst — IBM Global Services (Bangalore)\n2016 – 2020 (4 years)\n\nEDUCATION\nM.Tech Industrial Engineering — IISc, 2016\nB.Tech Mechanical — NITK Surathkal, 2014\n\nSKILLS\nPython, OR-Tools, Gurobi, CPLEX, scikit-learn (basic), pandas,\nlinear programming, integer programming, heuristics, logistics optimization,\nsupply chain, limited: PyTorch, deep learning, distributed systems\n"
+}

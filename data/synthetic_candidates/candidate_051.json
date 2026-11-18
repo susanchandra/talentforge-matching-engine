@@ -1,0 +1,8 @@
+{
+  "id": "candidate_051",
+  "name": "Dr. Rajan Krishnan",
+  "ground_truth_quality": "medium",
+  "ground_truth_notes": "10 years NLP research, deep theoretical expertise, weak production/MLOps skills.",
+  "candidate_type": "domain_specialist",
+  "resume_text": "DR. RAJAN KRISHNAN\nSenior Research Scientist — Natural Language Processing\nrajan.k@iitm.ac.in | Chennai, India\n\nSUMMARY\n10 years of NLP research (IIT Madras, INRIA France). 35 publications,\nh-index 18. Deep expertise in syntactic parsing, semantic representation,\nand multilingual NLP for Indian languages. Limited production ML experience.\n\nEXPERIENCE\n\nAssociate Professor (on sabbatical) — IIT Madras\n2019 – Present (5 years)\n- Leads the Language Technologies Research Centre\n- Published at ACL, EMNLP, NAACL, COLING regularly\n\nResearch Scientist — INRIA Grenoble\n2018 – 2019 (1 year postdoc)\n\nPhD Research — IIT Bombay\n2014 – 2018 (4 years)\n\nEDUCATION\nPhD Computer Science (NLP) — IIT Bombay, 2018\nM.Tech — IIT Madras, 2014\n\nSKILLS\nPython, PyTorch, HuggingFace, Stanford NLP, NLTK, research,\nsyntactic parsing, semantic parsing, multilingual NLP, linguistics,\nLaTeX, R (statistics), limited production/DevOps skills\n\nPUBLICATIONS: 35, h-index 18 (Google Scholar)\n"
+}

@@ -1,0 +1,8 @@
+{
+  "id": "candidate_041",
+  "name": "Ramesh Babu",
+  "ground_truth_quality": "medium",
+  "ground_truth_notes": "Former software engineer pivoting to ML, 6 years SE experience transferable, 1.5 years ML.",
+  "candidate_type": "career_changer",
+  "resume_text": "RAMESH BABU\nSoftware Engineer transitioning to Machine Learning\nramesh.b@email.com | Bangalore, India\n\nSUMMARY\n6 years of senior software engineering at Oracle India, pivoting to ML engineering.\nBuilt distributed systems serving 100M+ users. Now applying that engineering rigor\nto ML systems. 1.5 years of hands-on ML work alongside my SE role.\n\nEXPERIENCE\n\nSenior Software Engineer — Oracle India (Bangalore)\nJuly 2018 – Present (6 years)\n- Built distributed microservices for Oracle Cloud Infrastructure\n- Led migration of monolith to microservices (12 services, 2M LOC)\n- ML side project: Built anomaly detection for Oracle cloud service SLAs\n  using time-series LSTM — deployed to production, monitoring 500+ services\n\nEDUCATION\nB.Tech Computer Science — RVCE Bangalore, 2018 (CGPA: 8.6)\n\nSKILLS\nPython, Java, Kubernetes, Docker, distributed systems, REST APIs,\nPyTorch (self-learning), scikit-learn, time-series, anomaly detection,\nsystem design, SQL, microservices\n"
+}

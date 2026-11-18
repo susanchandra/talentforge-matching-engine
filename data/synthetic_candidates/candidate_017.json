@@ -1,0 +1,8 @@
+{
+  "id": "candidate_017",
+  "name": "Nadia Kamau",
+  "ground_truth_quality": "high",
+  "ground_truth_notes": "4 years, strong NLP hidden gem, built text analytics at a non-tech company.",
+  "candidate_type": "good_hidden",
+  "resume_text": "NADIA KAMAU\nPython & Machine Learning Developer\nnadia.k@email.com | Bangalore, India (originally Nairobi, Kenya)\n\nWORK EXPERIENCE\n\nPython Developer — Times of India Digital (Bangalore)\nFebruary 2021 – Present (3.5 years)\n- Built automatic article categorization and tagging system for Times of India\n  digital content team; handles 1,500+ articles/day with 94% accuracy\n- Designed recommendation engine for related articles using TF-IDF + BERT\n  embeddings; increased page views per session by 23%\n- Built news summarization tool using extractive NLP that generates\n  2-sentence summaries — used by editorial team for breaking news\n- Created content duplication detection system preventing republication\n  of similar articles (cosine similarity threshold on BERT embeddings)\n- Tech: Python, HuggingFace, scikit-learn, FastAPI, MongoDB, Redis, Docker\n\nData Analyst — Accenture India (Bangalore)\nJune 2019 – January 2021 (1.5 years)\n- Built BI dashboards for telecom client using SQL and Tableau\n- Automated monthly reporting using Python scripts saving 8 hours/week\n\nEDUCATION\nB.E. in Computer Science — RV College of Engineering, Bangalore, 2019\n\nSKILLS\nPython, HuggingFace Transformers, BERT, scikit-learn, FastAPI,\nMongoDB, Redis, Docker, NLP, text classification, summarization,\nrecommendation systems, content analytics, SQL, Tableau\n"
+}

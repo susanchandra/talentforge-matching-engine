@@ -1,0 +1,8 @@
+{
+  "id": "candidate_048",
+  "name": "Priti Singh",
+  "ground_truth_quality": "medium",
+  "ground_truth_notes": "Ex-biologist pivoting to ML/bioinformatics, strong domain expertise.",
+  "candidate_type": "career_changer",
+  "resume_text": "PRITI SINGH\nBioinformatics ML Researcher\npriti.s@email.com | Hyderabad, India\n\nEXPERIENCE\n\nBioinformatics Scientist — Biocon (Hyderabad)\nJanuary 2021 – Present (3.5 years)\n- Built ML models for drug-target interaction prediction (AUC: 0.89)\n- Applied graph neural networks to molecular property prediction\n- Collaborated with computational chemistry team on ADMET prediction\n\nResearch Associate — CCMB Hyderabad\nJuly 2018 – December 2020 (2.5 years)\n- Genomics research on antimicrobial resistance\n\nEDUCATION\nM.Sc. Bioinformatics — University of Hyderabad, 2018\nB.Sc. Biotechnology — JNTU, 2016\n\nSKILLS\nPython, PyTorch, scikit-learn, RDKit, BioPython, pandas, R,\ngraph neural networks, molecular biology, bioinformatics,\ngenomics, drug discovery ML, NumPy\n"
+}

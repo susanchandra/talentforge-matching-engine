@@ -1,0 +1,8 @@
+{
+  "id": "candidate_052",
+  "name": "Girish Sharma",
+  "ground_truth_quality": "medium",
+  "ground_truth_notes": "8 years computer vision research, strong vision but no distributed systems or MLOps.",
+  "candidate_type": "domain_specialist",
+  "resume_text": "GIRISH SHARMA\nPrincipal CV Researcher\ngirish.s@iisc.ac.in | Bangalore, India\n\nSUMMARY\n8 years computer vision research at IISc and TCS Research. 22 publications.\nWorld-class expertise in 3D scene understanding and generative image models.\nTransitioning to industry — limited production engineering experience.\n\nEXPERIENCE\n\nPrincipal Research Scientist — TCS Research (Bangalore)\n2020 – Present (4 years)\n- Research on 3D scene reconstruction and novel view synthesis (NeRF variants)\n- 3 patents filed; work licensed to Tata Motors for autonomous driving\n\nPostdoc — IISc Bangalore\n2018 – 2020 (2 years)\n\nPhD Computer Vision — IIT Bombay\n2014 – 2018\n\nEDUCATION\nPhD Computer Science — IIT Bombay, 2018\nB.Tech Electronics — BITS Pilani, 2014\n\nSKILLS\nPython, PyTorch, OpenCV, CUDA, 3D vision, generative models,\nNeRF, image synthesis, weak in: Docker, Kubernetes, SQL, production systems\n\nPUBLICATIONS: 22, including CVPR oral (2022)\n"
+}

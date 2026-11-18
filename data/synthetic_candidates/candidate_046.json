@@ -1,0 +1,8 @@
+{
+  "id": "candidate_046",
+  "name": "Sonali Bhatt",
+  "ground_truth_quality": "medium",
+  "ground_truth_notes": "Former UX researcher pivoting to ML for UX/behavior prediction, 3 years research.",
+  "candidate_type": "career_changer",
+  "resume_text": "SONALI BHATT\nML Engineer | User Behavior Analytics\nsonali.b@email.com | Bangalore, India\n\nEXPERIENCE\n\nML Engineer — Flipkart (Bangalore)\nSeptember 2022 – Present (2 years)\n- Built user session analysis models predicting purchase intent (AUC: 0.82)\n- Designed behavioral clustering of Flipkart shoppers into 8 segments;\n  used by marketing team for targeted campaigns\n\nUX Researcher — InMobi (Bangalore)\nJuly 2019 – August 2022 (3 years)\n- Led qualitative and quantitative user research for mobile advertising products\n- Conducted A/B tests and analyzed user behavior data\n\nEDUCATION\nM.Des Human-Computer Interaction — IIT Bombay, 2019\nB.Sc Psychology — Mumbai University, 2016\n\nSKILLS\nPython, scikit-learn, SQL, Tableau, user behavior analytics,\nA/B testing, clustering, pandas, statistical testing, R\n"
+}

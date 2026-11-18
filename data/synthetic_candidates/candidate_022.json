@@ -1,0 +1,8 @@
+{
+  "id": "candidate_022",
+  "name": "Aarav Gupta",
+  "ground_truth_quality": "medium",
+  "ground_truth_notes": "2.5 years, fast progression, led a small project team already, strong NLP skills.",
+  "candidate_type": "high_growth",
+  "resume_text": "AARAV GUPTA\nML Engineer\naarav.gupta@email.com | Delhi, India\n\nEXPERIENCE\n\nML Engineer — PhonePe (Bangalore)\nJanuary 2022 – Present (2.5 years)\n- Promoted from Junior to ML Engineer in 14 months (fastest in team history)\n- Built spam detection model for PhonePe UPI transactions reducing spam reports by 41%\n- Led 2-person sub-team to build merchant category classification (94% accuracy,\n  5M+ merchants classified)\n- Mentored 1 intern who received full-time return offer\n\nJunior ML Engineer — PhonePe (Bangalore)\nJuly 2021 – December 2021 (0.5 years)\n- Joined as campus hire; built data pipelines and model evaluation tools\n\nEDUCATION\nB.Tech in Computer Science — Delhi Technological University, 2021 (CGPA: 8.8)\n\nSKILLS\nPython, scikit-learn, PyTorch, SQL, Spark (beginner), Docker, MLflow,\nNLP, text classification, feature engineering, pandas, numpy\n\nPROJECTS\n- PayFraud: Personal project — real-time fraud detection demo using streaming data\n- NLP-Hindi: Fine-tuned IndicBERT on Hindi social media data (open sourced)\n"
+}

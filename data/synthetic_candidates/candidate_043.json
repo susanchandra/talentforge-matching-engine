@@ -1,0 +1,8 @@
+{
+  "id": "candidate_043",
+  "name": "Krishnaraj Menon",
+  "ground_truth_quality": "medium",
+  "ground_truth_notes": "Former financial analyst with 4 years quant finance, pivoting to ML, strong stats background.",
+  "candidate_type": "career_changer",
+  "resume_text": "KRISHNARAJ MENON\nQuantitative Analyst | ML Engineer\nkrish.m@email.com | Mumbai, India\n\nEXPERIENCE\n\nQuantitative Analyst — HSBC India (Mumbai)\nJune 2019 – Present (5 years)\n- Built statistical risk models for fixed income portfolio management\n- Applied ML to equity factor model (improved Sharpe from 1.12 to 1.38)\n- Python and R for data analysis, backtesting, and reporting\n- Last 1.5 years: 50% time on ML project (credit scoring with XGBoost)\n\nEDUCATION\nCFA (Level 3 cleared), FRM\nM.Sc. Statistics — CMI Chennai, 2019\n\nSKILLS\nPython, R, pandas, NumPy, scikit-learn, XGBoost, SQL, statistics,\ntime series, risk modeling, backtesting, financial markets, Docker (beginner)\n"
+}

@@ -1,0 +1,8 @@
+{
+  "id": "candidate_025",
+  "name": "Shreya Nambiar",
+  "ground_truth_quality": "medium",
+  "ground_truth_notes": "2.5 years, strong data engineering + ML combo, high growth in responsibilities.",
+  "candidate_type": "high_growth",
+  "resume_text": "SHREYA NAMBIAR\nData Engineer / ML Engineer\nshreya.n@email.com | Kochi, India\n\nEXPERIENCE\n\nData Engineer (transitioning to ML) — Infosys BPM (Bangalore)\nJanuary 2021 – Present (3.5 years)\n- Started as data engineer, transitioned to ML after 1 year on initiative\n- Built customer churn prediction model (self-initiated) now used by\n  2 Infosys client accounts to reduce churn by 17%\n- Designed Spark-based feature engineering pipeline for ML workflows\n- Mentored 2 junior data engineers on Python best practices\n\nEDUCATION\nB.Tech in Information Technology — NIT Calicut, 2021\n\nSKILLS\nPython, pandas, NumPy, scikit-learn, Apache Spark, SQL, PyTorch (learning),\nDocker, Airflow, MLflow (beginner), data engineering, ETL, churn prediction\n"
+}

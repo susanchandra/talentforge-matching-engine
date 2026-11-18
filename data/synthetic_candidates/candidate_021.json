@@ -1,0 +1,8 @@
+{
+  "id": "candidate_021",
+  "name": "Tanvi Shah",
+  "ground_truth_quality": "medium",
+  "ground_truth_notes": "2 years experience, excellent academic background IIT, strong project portfolio, high growth velocity.",
+  "candidate_type": "high_growth",
+  "resume_text": "TANVI SHAH\nJunior ML Engineer\ntanvi.shah.ml@gmail.com | Ahmedabad, India\n\nEDUCATION\nM.Tech in AI — IIT Bombay, 2022 (CGPA: 9.4/10)\nThesis: \"Efficient Few-Shot Learning for Low-Resource Languages\"\nB.Tech in Computer Science — DAIICT, 2020 (CGPA: 9.1/10)\n\nEXPERIENCE\n\nJunior ML Engineer — Groww (Bangalore)\nJuly 2022 – Present (2 years)\n- Built mutual fund recommendation model based on user risk profile and\n  investment history; A/B tested improvement in investment completion rate (+12%)\n- Implemented automated data quality checks catching 95% of upstream data issues\n  before they affect model predictions\n- Contributed to the ML platform team: wrote internal tooling for model evaluation\n  adopted by 6 other data scientists\n- Tech: Python, scikit-learn, PyTorch, MLflow, SQL, Docker\n\nACADEMIC PROJECTS\n- Few-shot NLP: Fine-tuned XLM-R for 10 low-resource Indian languages\n  with 50 examples each (published at student workshop @ EMNLP 2022)\n- RecSys Kaggle: Top 7% finish in Kaggle H&M Recommendation Challenge\n- AutoML: Built neural architecture search tool as B.Tech final project\n\nSKILLS\nPython, PyTorch, scikit-learn, HuggingFace, MLflow, Docker, SQL,\nNumPy, pandas, recommendation systems, NLP, few-shot learning\n\nACHIEVEMENTS\n- IIT Bombay Institute Silver Medal (rank 2 in department)\n- Kaggle Expert (6 competitions, 2 silver medals)\n"
+}

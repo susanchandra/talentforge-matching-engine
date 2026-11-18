@@ -1,0 +1,8 @@
+{
+  "id": "candidate_037",
+  "name": "Nitin Bansal",
+  "ground_truth_quality": "low",
+  "ground_truth_notes": "1 year data entry experience, inflated ML claims.",
+  "candidate_type": "keyword_stuffer",
+  "resume_text": "NITIN BANSAL\nAI/ML Engineer | Python Developer | Data Scientist\nnitin.bansal.ai@gmail.com | Agra, India\n\nTECHNICAL PROFILE\nExpert-level skills in Python, Machine Learning, Deep Learning, PyTorch, TensorFlow,\nscikit-learn, NLP, Computer Vision, MLOps, Docker, Kubernetes, AWS SageMaker,\nGCP Vertex AI, LLM fine-tuning, RAG, FAISS, Pinecone, recommendation systems,\ntime series forecasting, A/B testing, Airflow, MLflow, Weights & Biases.\n\nEXPERIENCE\n\nData Entry Operator — Reliance Jio (Agra)\nApril 2023 – Present (1 year)\n- Entered customer data into CRM system\n- Prepared daily Excel reports\n\nEDUCATION\nB.Sc. Mathematics — Agra University, 2023 (CGPA: 6.0)\n\nPROJECTS (personal, undeployed)\n- Linear regression on Boston Housing dataset\n- Titanic survival prediction\n- Image classification tutorial\n\nCERTIFICATIONS\n- Machine Learning A-Z — Udemy 2023\n- Python Bootcamp — Udemy 2022\n"
+}

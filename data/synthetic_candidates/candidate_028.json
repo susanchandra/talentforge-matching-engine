@@ -1,0 +1,8 @@
+{
+  "id": "candidate_028",
+  "name": "Haruto Yamamoto",
+  "ground_truth_quality": "medium",
+  "ground_truth_notes": "2 years, NLP focus, transferred from Japan, adapting well.",
+  "candidate_type": "high_growth",
+  "resume_text": "HARUTO YAMAMOTO\nJunior ML Engineer\nharuto.y@email.com | Bangalore, India (originally Osaka, Japan)\n\nEXPERIENCE\n\nJunior ML Engineer — Turing (Remote / Bangalore)\nMarch 2022 – Present (2.5 years)\n- Contributed to LLM fine-tuning pipeline for code generation (Python, Java)\n- Built automated evaluation framework for code LLM outputs using unit tests\n- Implemented RLHF data collection tool used by 10+ annotators\n\nEDUCATION\nM.Sc. in Machine Learning — University of Tokyo, 2022\n\nSKILLS\nPython, PyTorch, HuggingFace, LLM fine-tuning, RLHF,\nscikit-learn, NumPy, pandas, code generation, evaluation metrics\n"
+}

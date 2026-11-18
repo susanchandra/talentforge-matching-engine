@@ -1,0 +1,8 @@
+{
+  "id": "candidate_045",
+  "name": "Neeraj Pandey",
+  "ground_truth_quality": "medium",
+  "ground_truth_notes": "Ex-civil engineer, 4 years SE, pivoting to data science via Masters.",
+  "candidate_type": "career_changer",
+  "resume_text": "NEERAJ PANDEY\nData Scientist (ex-Civil Engineer)\nneeraj.p@email.com | Varanasi, India\n\nEXPERIENCE\n\nData Scientist — Delhivery (Gurgaon)\nJuly 2023 – Present (1 year)\n- Built warehouse location optimization model reducing last-mile cost by 11%\n- Demand forecasting for 500+ delivery zones using XGBoost + SARIMA ensemble\n\nCivil Engineer — L&T Construction (Mumbai)\nJune 2018 – June 2022 (4 years)\n- Project management for infrastructure projects worth ₹200 crore+\n\nEDUCATION\nM.Tech Data Science — IIT Bombay, 2023\nB.Tech Civil Engineering — IIT BHU, 2018\n\nSKILLS\nPython, pandas, scikit-learn, XGBoost, SQL, Airflow, logistics optimization,\ntime series, spatial analysis, geospatial Python (geopandas), NumPy\n"
+}

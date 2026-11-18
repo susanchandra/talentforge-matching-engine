@@ -1,0 +1,8 @@
+{
+  "id": "candidate_024",
+  "name": "Karan Malhotra",
+  "ground_truth_quality": "medium",
+  "ground_truth_notes": "2 years, very fast ramp, built a product used by 100K users.",
+  "candidate_type": "high_growth",
+  "resume_text": "KARAN MALHOTRA\nJunior ML Engineer\nkaran.m.dev@gmail.com | Gurgaon, India\n\nEXPERIENCE\n\nJunior ML Engineer — Razorpay (Bangalore)\nAugust 2022 – Present (2 years)\n- Built invoice OCR + information extraction pipeline used by 100K+ merchants\n- Improved invoice categorization accuracy from 78% to 91% using fine-tuned\n  LayoutLM model on labeled Razorpay merchant data\n- Reduced inference cost by 60% through model distillation into smaller BERT\n- Demonstrated highest individual model impact in team Q4 review\n\nEDUCATION\nB.Tech Computer Science — NIT Warangal, 2022 (CGPA: 9.0)\n\nSKILLS\nPython, PyTorch, HuggingFace, LayoutLM, BERT, FastAPI, Docker, SQL,\nOCR, document understanding, model distillation, scikit-learn\n\nPROJECTS\n- TaxBot: WhatsApp chatbot using GPT-3 for GST queries — 5,000 users\n- ResumeParser: Open-source resume parsing library (GitHub: 400+ stars)\n"
+}

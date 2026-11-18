@@ -1,0 +1,8 @@
+{
+  "id": "candidate_060",
+  "name": "Harish Subramanian",
+  "ground_truth_quality": "medium",
+  "ground_truth_notes": "10 years Bayesian ML specialist, probabilistic programming expert.",
+  "candidate_type": "domain_specialist",
+  "resume_text": "HARISH SUBRAMANIAN\nPrincipal Bayesian ML Scientist\nharish.s@email.com | Chennai, India\n\nSUMMARY\n10 years in probabilistic machine learning and Bayesian methods.\nDeep expertise in variational inference, Gaussian processes, and\nuncertainty quantification. Academic-industry hybrid career.\nLimited modern MLOps and deployment experience.\n\nEXPERIENCE\n\nPrincipal Scientist — Tata Consultancy Services Research (Chennai)\n2019 – Present (5 years)\n- Built Bayesian demand forecasting system with calibrated uncertainty bands\n  adopted by 2 retail clients\n- Uncertainty quantification for medical AI systems meeting FDA guidance\n\nResearch Scientist — INRIA Paris (France)\n2014 – 2018 (4 years postdoc)\n\nEDUCATION\nPhD Statistics (Bayesian Methods) — IIT Madras, 2014\nM.Stat — ISI Kolkata, 2010\n\nSKILLS\nPython, PyMC, Stan, NumPyro, GPyTorch, scikit-learn, R, pandas,\nBayesian methods, Gaussian processes, variational inference,\nprobabilistic programming, uncertainty quantification,\nlimited: PyTorch DL, Kubernetes, CI/CD, production ML systems\n\nPUBLICATIONS: 15, h-index 12\n"
+}

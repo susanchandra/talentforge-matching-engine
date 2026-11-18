@@ -1,0 +1,8 @@
+{
+  "id": "candidate_016",
+  "name": "Pooja Tiwari",
+  "ground_truth_quality": "high",
+  "ground_truth_notes": "4 years, strong time series ML at fintech, non-standard resume format, excellent impact numbers.",
+  "candidate_type": "good_hidden",
+  "resume_text": "POOJA TIWARI\nQuantitative Developer / ML Engineer\npooja.tiwari.quant@gmail.com | Mumbai, India\n\nWHAT I DO\nI build machine learning models that predict financial market behavior.\nAt Edelweiss, my models run live in production for algorithmic trading\nstrategies managing ₹200 crore in assets.\n\nWHERE I'VE WORKED\n\nQuantitative Developer — Edelweiss Securities (Mumbai)\nApril 2020 – Present (4 years)\n- Built LSTM-based stock return prediction models for Indian equity markets\n  (used in intraday momentum strategies, Sharpe ratio: 1.42 out of sample)\n- Developed options pricing model incorporating ML-predicted volatility surface;\n  reduced hedging errors by 28% compared to Black-Scholes baseline\n- Built real-time feature engineering pipeline consuming NSE tick data\n  (100K+ ticks/second) using Kafka + Python consumer workers\n- Created model performance monitoring dashboard tracking P&L attribution\n  by model component using Grafana\n\nAnalyst — ICICI Prudential AMC (Mumbai)\nJuly 2019 – March 2020 (0.75 years)\n- Built mutual fund performance attribution analytics using Python and Excel\n\nEDUCATION\nB.Sc. in Mathematics and Statistics — Mumbai University, 2019 (First Class, 83%)\n\nSKILLS\nPython, pandas, numpy, scikit-learn, Keras/TensorFlow, Kafka, Grafana,\nPostgreSQL, SQL, LSTM, time series forecasting, feature engineering,\nquantitative finance, options pricing, momentum strategies\n"
+}

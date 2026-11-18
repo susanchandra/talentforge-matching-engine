@@ -1,0 +1,8 @@
+{
+  "id": "candidate_023",
+  "name": "Leila Hosseini",
+  "ground_truth_quality": "medium",
+  "ground_truth_notes": "2 years, exceptional research background, strong computer vision.",
+  "candidate_type": "high_growth",
+  "resume_text": "LEILA HOSSEINI\nJunior Computer Vision Engineer\nleila.h@email.com | Bangalore, India (originally Tehran, Iran)\n\nEDUCATION\nM.Sc. Computer Science (Computer Vision) — University of Tehran, 2022 (GPA: 18.9/20)\nThesis: Object detection in low-light conditions using domain adaptation\n\nEXPERIENCE\n\nComputer Vision Engineer — Ather Energy (Bangalore)\nOctober 2022 – Present (2 years)\n- Building perception models for Ather electric scooters' advanced safety features\n- Implemented lane detection model with 96.2% accuracy for urban Indian roads\n- Optimized YOLO-based object detection for onboard GPU (50% latency reduction)\n- Co-authored internal technical report on dataset collection methodology\n\nSKILLS\nPython, PyTorch, OpenCV, TensorRT, scikit-learn, ONNX,\nDocker, CUDA, NumPy, pandas, object detection, semantic segmentation,\ndomain adaptation, model optimization\n\nPUBLICATIONS\nOne workshop paper at CVPR 2023 (first author) on nighttime object detection\n"
+}

@@ -1,0 +1,8 @@
+{
+  "id": "candidate_057",
+  "name": "Shweta Borkar",
+  "ground_truth_quality": "medium",
+  "ground_truth_notes": "7 years geospatial ML expert, deep domain but niche.",
+  "candidate_type": "domain_specialist",
+  "resume_text": "SHWETA BORKAR\nGeospatial ML Scientist\nshweta.b@email.com | Pune, India\n\nSUMMARY\n7 years in geospatial data science and remote sensing ML.\nExpert in satellite imagery analysis, GIS, and spatial statistics.\nLimited experience with general ML platform engineering.\n\nEXPERIENCE\n\nSenior Geospatial Scientist — Esri India (Pune)\n2019 – Present (5 years)\n- Built crop yield prediction model using Sentinel-2 satellite data (RMSE: 0.18 t/ha)\n- Flood extent mapping model for National Disaster Management Authority\n\nGIS Analyst — Survey of India (Dehradun)\n2017 – 2019 (2 years)\n\nEDUCATION\nM.Tech Remote Sensing — IIT Roorkee, 2017\nB.Tech Civil Engineering — VNIT Nagpur, 2015\n\nSKILLS\nPython, PyTorch, rasterio, GDAL, geopandas, scikit-learn,\nremote sensing, GIS, spatial statistics, object detection,\nsatellite imagery, limited: MLOps, distributed systems, SQL at scale\n"
+}

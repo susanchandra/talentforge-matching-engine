@@ -1,0 +1,8 @@
+{
+  "id": "candidate_030",
+  "name": "Femi Okonjo",
+  "ground_truth_quality": "medium",
+  "ground_truth_notes": "2.5 years, strong CV skills, worked on satellite imagery ML.",
+  "candidate_type": "high_growth",
+  "resume_text": "FEMI OKONJO\nJunior Computer Vision Engineer\nfemi.o@email.com | Bangalore, India (originally Abuja, Nigeria)\n\nEXPERIENCE\n\nJunior ML Engineer — Pixxel Space (Bangalore)\nOctober 2021 – Present (2.5 years)\n- Built crop type classification model on multispectral satellite imagery\n  (F1: 0.84 across 12 crop types)\n- Implemented change detection pipeline for urban expansion monitoring\n- Reduced cloud masking false positive rate by 40% using custom model\n\nEDUCATION\nM.Sc. in Remote Sensing — IIT Bombay, 2021\n\nSKILLS\nPython, PyTorch, scikit-learn, rasterio, GDAL, OpenCV,\nremote sensing, satellite imagery, change detection, numpy, pandas\n\nPROJECTS\n- Deforestation Alert: Real-time deforestation detection using Sentinel-2 (open source)\n"
+}

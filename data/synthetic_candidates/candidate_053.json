@@ -1,0 +1,8 @@
+{
+  "id": "candidate_053",
+  "name": "Nalini Raghunathan",
+  "ground_truth_quality": "medium",
+  "ground_truth_notes": "7 years biostatistics, deep statistical expertise but limited ML engineering.",
+  "candidate_type": "domain_specialist",
+  "resume_text": "NALINI RAGHUNATHAN\nSenior Biostatistician / ML for Clinical Trials\nnalini.r@email.com | Chennai, India\n\nSUMMARY\n7 years in biostatistics for clinical trials at pharma companies.\nExpert in survival analysis, Bayesian adaptive trial design, mixed models.\nApplying ML to clinical data; limited software engineering depth.\n\nEXPERIENCE\n\nSenior Biostatistician — Sun Pharmaceuticals (Mumbai)\n2020 – Present (4 years)\n- Bayesian adaptive trial design for Phase II oncology trials\n- Applying ML to predict trial dropout and optimize enrollment\n- R and Python for statistical programming\n\nBiostatistician — Syngene International (Bangalore)\n2017 – 2020 (3 years)\n\nEDUCATION\nM.Sc. Biostatistics — CMC Vellore, 2017\nB.Sc. Statistics — Presidency College Chennai, 2015\n\nSKILLS\nR, Python, SAS, survival analysis, Bayesian methods, mixed models,\nclinical trials, regulatory statistics, pandas, scikit-learn (basic),\nlimited: ML engineering, deployment, scalable systems\n"
+}

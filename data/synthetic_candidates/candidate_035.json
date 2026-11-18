@@ -1,0 +1,8 @@
+{
+  "id": "candidate_035",
+  "name": "Gaurav Singh",
+  "ground_truth_quality": "low",
+  "ground_truth_notes": "Fresh graduate with all certifications, no real work, keyword bombs.",
+  "candidate_type": "keyword_stuffer",
+  "resume_text": "GAURAV SINGH\nAI Engineer | MLOps | LLM | Computer Vision | NLP | GenAI\ngaurav.singh.ml@gmail.com | Chandigarh, India\n\nPROFESSIONAL SUMMARY\nHighly motivated AI/ML Engineer with extensive knowledge of Python, PyTorch, TensorFlow,\nHuggingFace, LLM fine-tuning, RAG, vector databases, MLOps, Docker, Kubernetes, CI/CD,\nAWS SageMaker, GCP, computer vision, object detection, NLP, recommendation systems,\nand Generative AI. Passionate about deploying state-of-the-art AI solutions at scale.\n\nEXPERIENCE: None (fresh graduate)\n\nEDUCATION\nB.Tech Computer Science — Chitkara University, 2024 (CGPA: 7.1)\n\nSKILLS\nPython, NumPy, pandas, Matplotlib, scikit-learn, PyTorch, TensorFlow, Keras,\nHuggingFace, BERT, GPT, LangChain, LlamaIndex, FAISS, Pinecone, Chroma,\nDocker, Kubernetes, AWS, GCP, MLflow, Airflow, FastAPI, Flask, SQL, Spark\n\nCERTIFICATIONS (21 total)\n- Deep Learning Specialization (Coursera)\n- Machine Learning Specialization (Coursera)\n- MLOps Specialization (Coursera)\n- TensorFlow Developer Certificate\n- AWS Solutions Architect Associate\n- Multiple Udemy certificates\n\nPROJECTS (all tutorial/course-based)\n- Image classification MNIST and CIFAR-10\n- GPT chatbot with LangChain\n- Movie recommendation with collaborative filtering\n- Stock price prediction LSTM\n- RAG chatbot with FAISS and OpenAI\n\nGITHUB: 15 repositories, all course exercises\n"
+}
